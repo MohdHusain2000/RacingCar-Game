@@ -49,3 +49,19 @@ position: absolute;
 display: grid;
 animation: object infinite linear 6s;
 }
+
+.object1 > img {
+margin-left: 110vh;
+height: 15vh;
+position: absolute;
+display: grid;
+animation: object1 infinite linear 4s;
+}
+
+.object2 > img {
+margin-left: 75vh;
+height: 15vh;
+position: absolute;
+display: grid;
+animation: object2 infinite linear 2s;
+}
