@@ -104,6 +104,17 @@ animation: object2 infinite linear 2s;
     }
 
   }
+@keyframes streetMotion {
+
+from {
+  background-position-y: 0;
+
+}
+
+to {
+  background-position-y: 100%;
+}
+}
 
 #start {
    position: absolute;
