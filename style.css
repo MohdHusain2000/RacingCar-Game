@@ -18,21 +18,22 @@ h1 {
   position: absolute;
 }
 
-.background > img {
-  height: 85vh;
-  width: 60.5vh;
-  position: absolute;
-  margin-left: 130.25vh;
+.Green > img {
+height: 85vh;
+width: 60.5vh;
+position: absolute;
+margin-left: 130.25vh;
 }
 
-.streets > img{
-  height: 85vh;
-  width: 190vh;
-  position: absolute;
-  margin-left: 0.25vh;
-  animation: streetMotion 10s linear infinite; 
-
-} 
+.streets {
+height: 85vh;
+width: 190vh;
+position: absolute;
+background-image: url("https://img.freepik.com/premium-vector/straight-road-illustration-design_842224-1371.jpg");
+margin-left: 0.25vh;
+background-size: cover;
+animation: streetMotion 6s linear infinite; 
+}
 
 .playercar >img {
   height: 20vh;
@@ -112,7 +113,7 @@ from {
 }
 
 to {
-  background-position-y: 100%;
+  background-position-y: -60%;
 }
 }
 
