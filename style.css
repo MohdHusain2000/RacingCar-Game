@@ -25,6 +25,15 @@ position: absolute;
 margin-left: 130.25vh;
 }
 
+.streets > img{
+  height: 85vh;
+  width: 190vh;
+  position: absolute;
+  margin-left: 0.25vh;
+  animation: streetMotion 10s linear infinite; 
+
+} 
+
 .playercar >img {
   height: 20vh;
   position: absolute;
