@@ -65,3 +65,42 @@ position: absolute;
 display: grid;
 animation: object2 infinite linear 2s;
 }
+
+@keyframes object {
+  0% {
+     
+      top: 10vh;
+
+  }
+  100% {
+
+      top: 80vh; 
+
+  }}
+
+@keyframes object1 {
+    0% {
+       
+        top: 10vh;
+  
+    }
+    100% {
+  
+        top: 80vh; 
+  
+    }
+  }
+
+@keyframes object2 {
+    0% {
+       
+        top: 10vh;
+  
+    }
+    100% {
+  
+        top: 80vh; 
+  
+    }
+
+  }
