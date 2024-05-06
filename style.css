@@ -1,21 +1,25 @@
-h1 {
-    text-align: center;
-
+.gameRacing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .racing-game {
-  height: 85vh;
-  width: 190vh;
-  margin: 5px auto;
-  position: relative;
-  border: solid black 15px;
-  margin-top: 60px;
+height: 85vh;
+width: 190vh;
+margin-top: 0;
+position: absolute;
+border: solid black 15px;
+
 }
 
 .racing-game > img {
-  height: 85vh;
-  width: 60.5vh;
-  position: absolute;
+height: 85vh;
+width: 60.5vh;
+position: absolute;
 }
 
 .Green > img {
@@ -32,42 +36,47 @@ position: absolute;
 background-image: url("https://img.freepik.com/premium-vector/straight-road-illustration-design_842224-1371.jpg");
 margin-left: 0.25vh;
 background-size: cover;
-animation: streetMotion 6s linear infinite; 
-}
+} 
 
-.playercar >img {
-  height: 20vh;
-  position: absolute;
-  margin-bottom: 10px;
-  margin-left: 80vh;
-  margin-top: 60vh;
+.playercar > img {
+height: 20vh;
+position: absolute;
+margin-bottom: 10px;
+margin-left: 80vh;
+margin-top: 60vh;
 }
 
 .object > img {
-margin-left: 95vh;
+margin-left: 93vh;
 height: 15vh;
 position: absolute;
-display: grid;
-animation: object infinite linear 6s;
 }
 
 .object1 > img {
 margin-left: 110vh;
 height: 15vh;
 position: absolute;
-display: grid;
-animation: object1 infinite linear 4s;
 }
 
 .object2 > img {
 margin-left: 75vh;
 height: 15vh;
 position: absolute;
-display: grid;
-animation: object2 infinite linear 2s;
 }
 
 @keyframes object {
+0% {
+   
+    top: 10vh;
+
+}
+100% {
+
+    top: 80vh; 
+
+}}
+
+@keyframes object1 {
   0% {
      
       top: 10vh;
@@ -77,34 +86,23 @@ animation: object2 infinite linear 2s;
 
       top: 80vh; 
 
-  }}
-
-@keyframes object1 {
-    0% {
-       
-        top: 10vh;
-  
-    }
-    100% {
-  
-        top: 80vh; 
-  
-    }
   }
+}
 
 @keyframes object2 {
-    0% {
-       
-        top: 10vh;
-  
-    }
-    100% {
-  
-        top: 80vh; 
-  
-    }
+  0% {
+     
+      top: 10vh;
 
   }
+  100% {
+
+      top: 80vh; 
+
+  }
+
+}
+
 @keyframes streetMotion {
 
 from {
@@ -117,30 +115,57 @@ to {
 }
 }
 
+@keyframes playercar {
+
+  0% {
+     
+    top: 10vh;
+
+}
+100% {
+
+    top: -60vh; 
+
+}
+}
+
+ .animateop {        
+  animation: object 4s  linear infinite;
+}
+ .animateop1 {        
+  animation: object1 3s  linear infinite;
+}
+ .animateop2 {        
+  animation: object2 2s  linear infinite;
+}
+ .animatestr {        
+  animation: streetMotion 8s  linear infinite;
+}
+             
 #start {
-   position: absolute;
-   cursor: pointer;
-   font-size: 16px;
-   border-radius: 12px;
-   background-color: green;
-   left: 30px;
-   border: solid black;
+ position: absolute;
+ cursor: pointer;
+ font-size: 16px;
+ border-radius: 3px;
+ background-color: green;
+ margin-left: 12px;
+ border: solid black;
 }
 
 #stop {
-  position: absolute;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 12px;
-  background-color: red;
-  border: solid black;
-  margin-left: 100px;
+position: absolute;
+cursor: pointer;
+font-size: 16px;
+border-radius: 3px;
+background-color: red;
+border: solid black;
+margin-left: 100px;
 }
 
 #score {
-  position: absolute;
-  font-size: 16px;
-  background-color: white;
-  border: solid black 5px;
-  margin-left: 1193px;
+position: absolute;
+font-size: 16px;
+background-color: blue;
+border: solid black 3px;
+margin-left: 1200px;
 }
