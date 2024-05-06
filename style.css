@@ -24,3 +24,28 @@ h1 {
   position: absolute;
   margin-left: 130.25vh;
 }
+
+.streets > img{
+  height: 85vh;
+  width: 190vh;
+  position: absolute;
+  margin-left: 0.25vh;
+  animation: streetMotion 10s linear infinite; 
+
+} 
+
+.playercar >img {
+  height: 20vh;
+  position: absolute;
+  margin-bottom: 10px;
+  margin-left: 80vh;
+  margin-top: 60vh;
+}
+
+.object > img {
+margin-left: 95vh;
+height: 15vh;
+position: absolute;
+display: grid;
+animation: object infinite linear 6s;
+}
