@@ -124,3 +124,11 @@ animation: object2 infinite linear 2s;
   border: solid black;
   margin-left: 100px;
 }
+
+#score {
+  position: absolute;
+  font-size: 16px;
+  background-color: white;
+  border: solid black 5px;
+  margin-left: 1193px;
+}
