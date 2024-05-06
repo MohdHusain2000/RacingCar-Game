@@ -104,3 +104,23 @@ animation: object2 infinite linear 2s;
     }
 
   }
+
+#start {
+   position: absolute;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 12px;
+   background-color: green;
+   left: 30px;
+   border: solid black;
+}
+
+#stop {
+  position: absolute;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 12px;
+  background-color: red;
+  border: solid black;
+  margin-left: 100px;
+}
