@@ -46,6 +46,32 @@ let playCar= {
 }
  
 
+// Function to maintain the cars speed
+const moveDown = () => {
+    let topDir = parseFloat(window.getComputedStyle(playerCar).top)
+    let maxHeight = 90 - playerCar.offsetHeight
+    if (topDir < 0) {
+        playerCar.style.top = (maxHeight+opcarSpeed) +'px'
+    }
+}
+
+// Function to move the player car left
+const moveLeft = () => {
+    let leftDir = parseFloat(window.getComputedStyle(playerCar).left);
+    if (leftDir > -200 ) {
+        playerCar.style.left = (leftDir - opcarSpeed) + 'px'
+    }
+}
+
+ // Function to move the player car right
+const moveRight = () => {
+    let leftDir = parseFloat(window.getComputedStyle(playerCar).left);
+    let width = 150 - playerCar.offsetWidth;
+    if (leftDir < width) {
+        playerCar.style.left = (leftDir + opcarSpeed) + 'px'
+    }
+}
+
 // Function to speed up the car
 const moveUp = () => {
     let topDir = parseFloat(window.getComputedStyle(playerCar).top);
@@ -60,6 +86,32 @@ const Acceleration = () =>  {
     let Dir = parseFloat(playerCar.style.top)
     if (Dir > 0 || Dir !== null)
     playerCar.style.top = (Dir-playCar.speed) + 'px'
+}
+
+// Function to maintain the cars speed
+const moveDown = () => {
+    let topDir = parseFloat(window.getComputedStyle(playerCar).top)
+    let maxHeight = 90 - playerCar.offsetHeight
+    if (topDir < 0) {
+        playerCar.style.top = (maxHeight+opcarSpeed) +'px'
+    }
+}
+
+// Function to move the player car left
+const moveLeft = () => {
+    let leftDir = parseFloat(window.getComputedStyle(playerCar).left);
+    if (leftDir > -200 ) {
+        playerCar.style.left = (leftDir - opcarSpeed) + 'px'
+    }
+}
+
+ // Function to move the player car right
+const moveRight = () => {
+    let leftDir = parseFloat(window.getComputedStyle(playerCar).left);
+    let width = 150 - playerCar.offsetWidth;
+    if (leftDir < width) {
+        playerCar.style.left = (leftDir + opcarSpeed) + 'px'
+    }
 }
 
 
