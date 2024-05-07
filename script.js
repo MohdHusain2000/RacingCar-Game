@@ -8,20 +8,49 @@ let opCar2 = document.getElementById('opCar2')
 let start = document.getElementById('start')
 let stop = document.getElementById('stop')
 let scoreButton = document.getElementById('score')
+
 /*Game Control and Conditions*/
 let gameOn = false
 let score = 0
+let opcarSpeed = 10;
+let strSpeed = 5;
+
 let controlKeys = {
     ArrowUp: false,
     ArrowDown: false,
     ArrowRight: false,
     ArrowLeft: false,
+    Space: false,
 } 
+
 let playCar= {
     speed: 0,
     score: 0,
     acceleration: 1,
 };
+
+////////////////////////////////
+// Functions For Game Logic Here
+// Function to start the game
+ const startPlay= () => {
+    gameOn = true
+    playCar.score
+    scoreResult()
+    movePlayerCar()
+    highScore()
+    gameLogic()
+}
+
+// Function to stop the game
+ const stopPlay = () => {
+    gameOn = false;
+    stopAnimate()
+}
+
+// Function to count the Car.score
+ const scoreResult = () => {
+    scoreButton.innerText = 'score: ' + playCar.score
+}
 
 // Function to move the player car
  const movePlayerCar = () => {
@@ -44,6 +73,7 @@ let playCar= {
         controlKeys[event.key] = false;
     });
 }
+ 
 
 // Function to speed up the car
 const moveUp = () => {
@@ -87,13 +117,46 @@ const moveRight = () => {
     }
 }
 
+ // Function to get the highest score
+ const highScore = () => {
+    let interval = setInterval(() => {
+        if (gameOn) {
+            playCar.score += 5
+            scoreResult();
+        } else {
+            clearInterval(interval);
+        }
+    }, 30)
+}
 
+// Function to animate opponents cars
+const animate = () => {
+    opCar.classList.add('animateop')
+    opCar1.classList.add('animateop1')
+    opCar2.classList.add('animateop2')
+    street.classList.add('animatestr') 
+}
 
+// Function to animate opponents cars
+const animate1 = () => {
+    opCar.classList.add('animateop01')
+    opCar1.classList.add('animateop02')
+    opCar2.classList.add('animateop03')
+    street.classList.add('animatestr1') 
+}
 
-
-
-
-
-
-
-
+ // Function to move a car element
+ const stopAnimate = () => {
+    //* Less than 500
+    opCar.classList.remove('animateop')
+    opCar1.classList.remove('animateop1')
+    opCar2.classList.remove('animateop2')
+    street.classList.remove('animatestr')
+ 
+    //* More than 500
+    opCar.classList.remove('animateop01')
+    opCar1.classList.remove('animateop02')
+    opCar2.classList.remove('animateop03')
+    street.classList.remove('animatestr1')
+    
+}
