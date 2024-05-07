@@ -39,17 +39,18 @@ background-size: cover;
 } 
 
 .playercar > img {
-height: 20vh;
+height: 12vh;
 position: absolute;
+padding: 0 auto;
 margin-bottom: 10px;
-margin-left: 80vh;
+margin-left: 100vh;
 margin-top: 60vh;
 }
 
 .object > img {
-margin-left: 93vh;
 height: 15vh;
 position: absolute;
+margin-left: 72vh;
 }
 
 .object1 > img {
@@ -59,9 +60,9 @@ position: absolute;
 }
 
 .object2 > img {
-margin-left: 75vh;
 height: 15vh;
 position: absolute;
+left: 48%;
 }
 
 @keyframes object {
@@ -130,16 +131,29 @@ to {
 }
 
  .animateop {        
-  animation: object 4s  linear infinite;
+  animation: object 1s  linear infinite;
 }
  .animateop1 {        
-  animation: object1 3s  linear infinite;
+  animation: object1 2s  linear infinite;
 }
  .animateop2 {        
-  animation: object2 2s  linear infinite;
+  animation: object2 3s  linear infinite;
 }
  .animatestr {        
   animation: streetMotion 8s  linear infinite;
+}
+
+.animateop01 {        
+  animation: object 4s  linear infinite;
+}
+ .animateop02 {        
+  animation: object1 1s  linear infinite;
+}
+ .animateop03 {        
+  animation: object2 3s  linear infinite;
+}
+ .animatestr1 {        
+  animation: streetMotion 6.5s  linear infinite;
 }
              
 #start {
