@@ -26,7 +26,7 @@ let controlKeys = {
 let playCar= {
     speed: 0,
     score: 0,
-    acceleration: 0.1,
+    acceleration: 1,
 };
 
 ////////////////////////////////
@@ -38,6 +38,7 @@ let playCar= {
     scoreResult()
     movePlayerCar()
     animate()
+    animate1()
     highScore()
      
 }
@@ -45,6 +46,8 @@ let playCar= {
 // Function to stop the game
  const stopPlay = () => {
     gameOn = false;
+    stopAnimate()
+    stopanimate1()
 }
 
 // Function to count the Car.score
@@ -75,4 +78,101 @@ let playCar= {
 }
  
 
+// Function to speed up the car
+const moveUp = () => {
+    let topDir = parseFloat(window.getComputedStyle(playerCar).top);
+    if (topDir+200 >= 0) {
+        playerCar.style.top = (topDir - opcarSpeed) + 'px'
+    } else {
+        playerCar.style.top = 0 +'px'
+    }
+}
+const Acceleration = () =>  {
+    playCar.speed += playCar.acceleration
+    let Dir = parseFloat(playerCar.style.top)
+    if (Dir > 0 || Dir !== null)
+    playerCar.style.top = (Dir-playCar.speed) + 'px'
+}
+
+// Function to maintain the cars speed
+const moveDown = () => {
+    let topDir = parseFloat(window.getComputedStyle(playerCar).top)
+    let maxHeight = 90 - playerCar.offsetHeight
+    if (topDir < 0) {
+        playerCar.style.top = (maxHeight+opcarSpeed) +'px'
+    }
+}
+
+// Function to move the player car left
+const moveLeft = () => {
+    let leftDir = parseFloat(window.getComputedStyle(playerCar).left);
+    if (leftDir > -200 ) {
+        playerCar.style.left = (leftDir - opcarSpeed) + 'px'
+    }
+}
+
+ // Function to move the player car right
+const moveRight = () => {
+    let leftDir = parseFloat(window.getComputedStyle(playerCar).left);
+    let width = 150 - playerCar.offsetWidth;
+    if (leftDir < width) {
+        playerCar.style.left = (leftDir + opcarSpeed) + 'px'
+    }
+}
+
+ // Function to get the highest score
+ const highScore = () => {
+    let interval = setInterval(() => {
+        if (gameOn) {
+            playCar.score += 1
+            scoreResult();
+        } else {
+            clearInterval(interval);
+        }
+    }, 30)
+}
+
+// Function to animate opponents cars
+const animate = () => {
+    opCar.classList.add('animateop')
+    opCar1.classList.add('animateop1')
+    opCar2.classList.add('animateop2')
+    street.classList.add('animatestr') 
+}
+
+const animate1 = () => {
+    opCar.classList.add('animateop01').
+    opCar1.classList.add('animateop02')
+    opCar2.classList.add('animateop03')
+    street.classList.add('animatestr1') 
+}
+
+// Function to move a car element
+const stopAnimate1 = () => {
+    opCar.classList.remove('animateop')
+    opCar1.classList.remove('animateop1')
+    opCar2.classList.remove('animateop2')
+    street.classList.remove('animatestr')
+
+}
+
+const stopAnimate = () => {
+    opCar.classList.remove('animateop01')
+    opCar1.classList.remove('animateop02')
+    opCar2.classList.remove('animateop03')
+    street.classList.remove('animatestr1')
+
+}
+
+// Function for collision
+
+
+
+// Function to get the winner
+
+////////////////////////////////
+// Rendering Function
+
+start.addEventListener('click', startPlay)
+stop.addEventListener('click', stopPlay)
 

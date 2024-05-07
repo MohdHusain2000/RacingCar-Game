@@ -141,6 +141,19 @@ to {
  .animatestr {        
   animation: streetMotion 8s  linear infinite;
 }
+
+.animateop01 {        
+  animation: object 4s  linear infinite;
+}
+ .animateop02 {        
+  animation: object1 1s  linear infinite;
+}
+ .animateop03 {        
+  animation: object2 3s  linear infinite;
+}
+ .animatestr1 {        
+  animation: streetMotion 6.5s  linear infinite;
+}
              
 #start {
  position: absolute;
