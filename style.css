@@ -39,7 +39,7 @@ background-size: cover;
 } 
 
 .playercar > img {
-height: 12vh;
+height: 13vh;
 position: absolute;
 padding: 0 auto;
 margin-bottom: 10px;
@@ -131,29 +131,42 @@ to {
 }
 
  .animateop {        
-  animation: object 1s  linear infinite;
+  animation: object 5s  linear infinite;
 }
  .animateop1 {        
-  animation: object1 2s  linear infinite;
+  animation: object1 3s  linear infinite;
 }
  .animateop2 {        
-  animation: object2 3s  linear infinite;
+  animation: object2 4s  linear infinite;
 }
  .animatestr {        
-  animation: streetMotion 8s  linear infinite;
+  animation: streetMotion 10s  linear infinite;
 }
 
 .animateop01 {        
-  animation: object 4s  linear infinite;
+  animation: object 2s  linear infinite;
 }
  .animateop02 {        
-  animation: object1 1s  linear infinite;
+  animation: object1 2s  linear infinite;
 }
  .animateop03 {        
-  animation: object2 3s  linear infinite;
+  animation: object2 1s  linear infinite;
 }
  .animatestr1 {        
-  animation: streetMotion 6.5s  linear infinite;
+  animation: streetMotion 10s  linear infinite;
+}
+
+.animateop001 {        
+  animation: object 2s  linear infinite;
+}
+ .animateop002 {        
+  animation: object1 2s  linear infinite;
+}
+ .animateop003 {        
+  animation: object2 2s  linear infinite;
+}
+ .animatestr2 {        
+  animation: streetMotion 10s  linear infinite;
 }
              
 #start {
