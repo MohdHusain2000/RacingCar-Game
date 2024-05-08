@@ -287,7 +287,7 @@ const animate4 = () => {
 // function to increase game hardness
  const gameLevel = () => {
      if (gameOn == true) {
-        if (playCar.score>=300 && playCar.score <=500){
+        if (playCar.score<=300 && playCar.score <=500){
            animate1()
         } else if (playCar.score >=800 && playCar.score <=1000){
            animate2()
