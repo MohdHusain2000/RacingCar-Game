@@ -64,6 +64,12 @@ position: absolute;
 left: 48%;
 }
 
+.object3 > img {
+  height: 15vh;
+  position: absolute;
+  margin-left: 83vh;
+  }
+
 @keyframes object {
 0% {
    
@@ -90,6 +96,20 @@ left: 48%;
 }
 
 @keyframes object2 {
+  0% {
+     
+      top: 10vh;
+
+  }
+  100% {
+
+      top: 80vh; 
+
+  }
+
+}
+
+@keyframes object3 {
   0% {
      
       top: 10vh;
@@ -167,7 +187,23 @@ to {
  .animatestr2 {        
   animation: streetMotion 10s  linear infinite;
 }
-             
+
+.animateop0001 {        
+  animation: object 2s  linear infinite;
+}
+ .animateop0002 {        
+  animation: object1 2s  linear infinite;
+}
+ .animateop0003 {        
+  animation: object2 2s  linear infinite;
+}
+ .animateop0004 {        
+  animation: object3 2s  linear infinite;
+}
+ .animatestr3 {        
+  animation: streetMotion 10s  linear infinite;
+}             
+
 #start {
  position: absolute;
  cursor: pointer;
