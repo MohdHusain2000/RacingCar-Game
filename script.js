@@ -37,7 +37,6 @@ let playCar= {
     resetGame()
     gameOn = true
     playCar.score
-    scoreResult()
     movePlayerCar()
     Result()
     gameLogic()
@@ -126,7 +125,11 @@ const moveRight = () => {
         if (gameOn) {
             playCar.score += 1
             scoreResult();
-        } else {
+        } else if (gameOn == false){
+            playCar.score = 0
+            resetGame()
+        }
+        else {
             clearInterval(interval);
         }
     }, 30)
@@ -182,7 +185,6 @@ const animate4 = () => {
     opCar3.classList.add('animateop0004')
     street.classList.add('animatestr2')
     opCar3.style.display= 'block'
-
 }
 
  // Function to move a car element
@@ -245,8 +247,8 @@ const animate4 = () => {
     stopPlay()
     let message = document.querySelector('.content')
     message.innerText = 'Game over! your score is: ' + playCar.score
-
  }
+
  const gameLogic = () => {
     if (gameOn == true) {
         findCollision();
@@ -305,8 +307,6 @@ const resetGame = () => {
     message.innerText = ''
     scoreResult();
     stopAnimate();
-
-// * reset the positions of all the cars
     playerCar.style.top = '0px';
     playerCar.style.left = '0px';
 }
