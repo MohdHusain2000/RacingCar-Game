@@ -1,5 +1,6 @@
 ////////////////////////////////
 // Global Variables Here
+
 const playerCar = document.getElementById('car')
 let street = document.querySelector('.streets')
 let opCar = document.getElementById('opCar')
@@ -32,12 +33,12 @@ let playCar= {
 
 ////////////////////////////////
 // Functions For Game Logic Here
+
 // Function to start the game
  const startPlay= () => {
     resetGame()
     gameOn = true
     playCar.score
-    scoreResult()
     movePlayerCar()
     Result()
     gameLogic()
@@ -126,10 +127,14 @@ const moveRight = () => {
         if (gameOn) {
             playCar.score += 1
             scoreResult();
-        } else {
+        } else if (gameOn == false){
+            playCar.score=0
+        }
+        else {
             clearInterval(interval);
         }
-    }, 30)
+    }, 50)
+    
 }
 
 // Function to animate opponents cars
@@ -182,11 +187,12 @@ const animate4 = () => {
     opCar3.classList.add('animateop0004')
     street.classList.add('animatestr2')
     opCar3.style.display= 'block'
-
 }
 
  // Function to move a car element
+
  const stopAnimate = () => {
+
     //* Less than 500
     opCar.classList.remove('animateop')
     opCar1.classList.remove('animateop1')
@@ -245,9 +251,8 @@ const animate4 = () => {
     stopPlay()
     let message = document.querySelector('.content')
     message.innerText = 'Game over! your score is: ' + playCar.score
-    resetGame();
-
  }
+
  const gameLogic = () => {
     if (gameOn == true) {
         findCollision();
@@ -259,35 +264,10 @@ const animate4 = () => {
     }
 }
 
- // Functions to get the highest
- const promptHighScore = () => {
-    const highScoreContent = document.getElementById('highScoreContent');
-    const highScore = localStorage.getItem('highScore') || 0;
-    highScoreContent.innerText = `Winner! High Score: ${highScore}`;
-    document.getElementById('scorePopup').style.display = 'flex';
-}
-    
- const hideHighScore = () => {
-    document.getElementById('scorePopup').style.display = 'none';
-}
-
- const gameOutcome = () =>{
-    gameOn= false;
-    const highScore = localStorage.getItem("highScore")
-    const playerScore = playCar.score
-   
-    if (playerScore > highScore || !highScore) {
-        localStorage.setItem("highScore", playerScore);
-        promptHighScore()
-        } else {
-        hideHighScore()
-    }
-  }
-
 // function to increase game hardness
  const gameLevel = () => {
      if (gameOn == true) {
-        if (playCar.score>=300 && playCar.score <=500){
+        if (playCar.score<=300 && playCar.score <=500){
            animate1()
         } else if (playCar.score >=800 && playCar.score <=1000){
            animate2()
@@ -302,16 +282,18 @@ const animate4 = () => {
 // Function to reset the game
 const resetGame = () => {
     gameOn =false;
-    score = 0;
-    stopAnimate()
-
-// * reset the positions of all the cars
+    let message = document.querySelector('.content')
+    message.innerText = ''
+    Result()
+    scoreResult();
+    stopAnimate();
     playerCar.style.top = '0px';
     playerCar.style.left = '0px';
 }
 
 ////////////////////////////////
 // Rendering Function
+
 start.addEventListener('click', startPlay)
 stop.addEventListener('click', stopPlay)
 
