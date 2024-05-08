@@ -1,3 +1,6 @@
+body {
+  background: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-cool-racing-texture-runway-passion-background-image_211571.jpg");
+}
 .gameRacing {
   display: flex;
   justify-content: space-between;
@@ -67,7 +70,7 @@ left: 48%;
 .object3 > img {
   height: 15vh;
   position: absolute;
-  margin-left: 83vh;
+  margin-left: 81.5vh;
   }
 
 @keyframes object {
@@ -169,33 +172,33 @@ to {
   animation: object1 2s  linear infinite;
 }
  .animateop03 {        
-  animation: object2 1s  linear infinite;
+  animation: object2 2s  linear infinite;
 }
  .animatestr1 {        
   animation: streetMotion 10s  linear infinite;
 }
 
 .animateop001 {        
-  animation: object 2s  linear infinite;
+  animation: object 3s  linear infinite;
 }
  .animateop002 {        
-  animation: object1 2s  linear infinite;
+  animation: object1 3s  linear infinite;
 }
  .animateop003 {        
-  animation: object2 2s  linear infinite;
+  animation: object2 3s  linear infinite;
 }
  .animatestr2 {        
   animation: streetMotion 10s  linear infinite;
 }
 
 .animateop0001 {        
-  animation: object 2s  linear infinite;
+  animation: object 3s  linear infinite;
 }
  .animateop0002 {        
   animation: object1 2s  linear infinite;
 }
  .animateop0003 {        
-  animation: object2 2s  linear infinite;
+  animation: object2 3s  linear infinite;
 }
  .animateop0004 {        
   animation: object3 2s  linear infinite;
@@ -238,10 +241,10 @@ text-align: center;
   display: flex;
   position: absolute;
   margin-top: 74.8vh;
-  margin-left: 132.2vh;
+  margin-left: 132.35vh;
   background-color: green;
   padding: 12px;
-  width: 57.3vh;
+  width: 57vh;
   height: 8.8vh;
 }
 
