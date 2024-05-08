@@ -126,13 +126,15 @@ const moveRight = () => {
             playCar.score += 1
             scoreResult();
         } else if (gameOn == false){
-            playCar.score = 0
-            resetGame()
+            playCar.score=0
+            scoreResult();
+            gameOff()
         }
         else {
             clearInterval(interval);
         }
-    }, 30)
+    }, 50)
+    
 }
 
 // Function to animate opponents cars
@@ -305,6 +307,7 @@ const resetGame = () => {
     gameOn =false;
     let message = document.querySelector('.content')
     message.innerText = ''
+    playCar.score = 0;
     scoreResult();
     stopAnimate();
     playerCar.style.top = '0px';
