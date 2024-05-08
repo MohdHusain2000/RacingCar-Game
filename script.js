@@ -5,6 +5,7 @@ let street = document.querySelector('.streets')
 let opCar = document.getElementById('opCar')
 let opCar1 = document.getElementById('opCar1')
 let opCar2 = document.getElementById('opCar2')
+let opCar3 = document.getElementById('opCar3')
 let start = document.getElementById('start')
 let stop = document.getElementById('stop')
 let scoreButton = document.getElementById('score')
@@ -94,7 +95,7 @@ const Acceleration = () =>  {
 // Function to maintain the cars speed
 const moveDown = () => {
     let topDir = parseFloat(window.getComputedStyle(playerCar).top)
-    let maxHeight = 90 - playerCar.offsetHeight
+    let maxHeight = 80 - playerCar.offsetHeight
     if (topDir < 0) {
         playerCar.style.top = (maxHeight+opcarSpeed) +'px'
     }
@@ -111,7 +112,7 @@ const moveLeft = () => {
  // Function to move the player car right
 const moveRight = () => {
     let leftDir = parseFloat(window.getComputedStyle(playerCar).left);
-    let width = 150 - playerCar.offsetWidth;
+    let width = 130 - playerCar.offsetWidth;
     if (leftDir < width) {
         playerCar.style.left = (leftDir + opcarSpeed) + 'px'
     }
@@ -130,7 +131,7 @@ const moveRight = () => {
 }
 
 // Function to animate opponents cars
-const animate = () => {
+const animate1 = () => {
     opCar.classList.add('animateop')
     opCar1.classList.add('animateop1')
     opCar2.classList.add('animateop2')
@@ -138,7 +139,7 @@ const animate = () => {
 }
 
 // Function to animate opponents cars
-const animate1 = () => {
+const animate2 = () => {
     opCar.classList.add('animateop01')
     opCar1.classList.add('animateop02')
     opCar2.classList.add('animateop03')
@@ -150,7 +151,7 @@ const animate1 = () => {
     }
 }
 
-const animate2 = () => {
+const animate3 = () => {
         opCar.classList.add('animateop001')
         opCar1.classList.add('animateop002')
         opCar2.classList.add('animateop003')
@@ -167,8 +168,18 @@ const animate2 = () => {
 }
 }
 
+const animate4 = () => {
+    opCar.classList.add('animateop0001')
+    opCar1.classList.add('animateop0002')
+    opCar2.classList.add('animateop0003')
+    opCar3.classList.add('animateop0004')
+    street.classList.add('animatestr2')
+    
+}
+
  // Function to move a car element
  const stopAnimate = () => {
+    console.log("Stopping play...")
     //* Less than 500
     opCar.classList.remove('animateop')
     opCar1.classList.remove('animateop1')
@@ -180,11 +191,18 @@ const animate2 = () => {
     opCar1.classList.remove('animateop02')
     opCar2.classList.remove('animateop03')
     street.classList.remove('animatestr1')
-
+    
     //* More than 1000
     opCar.classList.remove('animateop001')
     opCar1.classList.remove('animateop002')
     opCar2.classList.remove('animateop003')
+    street.classList.remove('animatestr1')
+
+    //* More than 1200
+    opCar.classList.remove('animateop0001')
+    opCar1.classList.remove('animateop0002')
+    opCar2.classList.remove('animateop0003')
+    opCar3.classList.remove('animateop0004')
     street.classList.remove('animatestr2')
     
 }
@@ -195,6 +213,7 @@ const animate2 = () => {
     let opCarRect = opCar.getBoundingClientRect();
     let opCarRect1 = opCar1.getBoundingClientRect();
     let opCarRect2 = opCar2.getBoundingClientRect();
+    let opCarRect3 = opCar3.getBoundingClientRect();
     
  //* Detect collisions
     let topBoundary = playerRect.top + playerCar.offsetHeight * 0.1
@@ -202,42 +221,67 @@ const animate2 = () => {
 
  if (topBoundary < opCarRect.bottom && bottomBoundary > opCarRect.top &&
     playerRect.left < opCarRect.right && playerRect.right > opCarRect.left) {
+        console.log('Collosion');
     gameOff()
  }  else if (topBoundary < opCarRect1.bottom && bottomBoundary > opCarRect1.top &&
     playerRect.left < opCarRect1.right && playerRect.right > opCarRect1.left){
+        console.log('Collosion');
     gameOff()
     }else if (topBoundary < opCarRect2.bottom && bottomBoundary > opCarRect2.top &&
     playerRect.left < opCarRect2.right && playerRect.right > opCarRect2.left){
+        console.log('Collosion');
     gameOff()
-        }
+    }else if (topBoundary < opCarRect3.bottom && bottomBoundary > opCarRect3.top &&
+    playerRect.left < opCarRect3.right && playerRect.right > opCarRect3.left){
+        console.log('Collosion');
+    gameOff()
+    }
  }
  
  // Function for game over
  const gameOff = () => {
-    gameOn = false;
-    alert("Game Over! Your score: " + playCar.score);
+     stopPlay()
+    let message = document.querySelector('.content')
+    message.innerText = 'Game over! your score is: ' + playCar.score
+    
+    
  }
-
  const gameLogic = () => {
     if (gameOn == true) {
         findCollision();
         gameLevel();
         requestAnimationFrame(gameLogic);
     }
+    else {
+        // cancelAnimationFrame(gameLogic)
+    }
 }
+
+ // Function to get the winner
+ const gameOutcome = () =>{
+    gameOn= false;
+    const highScore = localStorage.getItem("highScore");
+    if (player.score > highScore) {
+      localStorage.setItem("highScore", play.score);
+      score.innerText = `New High Score! Score: ${player.score}`;
+    } else {
+      score.innerText = `Game Over Score was ${player.score}`;
+    }
+  }
 
 // function to increase game hardness
  const gameLevel = () => {
-     if (gameOn = true) {
+     if (gameOn == true) {
         if (playCar.score <500){
-           animate()
-        } else if (playCar.score >=500 && playCar.score <1000){
            animate1()
-        } else if (playCar.score >=1000){
+        } else if (playCar.score >=500 && playCar.score <1000){
            animate2()
-        }
+        } else if (playCar.score >=1000 && playCar.score <1500){
+           animate3()
+        } else if (playCar.score >=1500){
+           animate4()
      } 
- }
+ }}
 
 ////////////////////////////////
 // Rendering Function
