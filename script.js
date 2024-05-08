@@ -136,13 +136,34 @@ const animate = () => {
     opCar2.classList.add('animateop2')
     street.classList.add('animatestr') 
 }
-
 // Function to animate opponents cars
 const animate1 = () => {
     opCar.classList.add('animateop01')
     opCar1.classList.add('animateop02')
     opCar2.classList.add('animateop03')
-    street.classList.add('animatestr1') 
+    street.classList.add('animatestr1')
+
+    if (playCar.score >= 750 && playCar.score <1000){
+        opCar.style.marginLeft='100vh';
+        opCar1.style.marginLeft='80vh';
+    }
+}
+
+const animate2 = () => {
+        opCar.classList.add('animateop001')
+        opCar1.classList.add('animateop002')
+        opCar2.classList.add('animateop003')
+        street.classList.add('animatestr2')
+        
+        if (playCar.score >= 1000){
+            opCar.style.marginLeft='85vh';
+            opCar1.style.marginLeft='112vh';
+        }
+
+        if (playCar.score >= 1250){
+        opCar.style.marginLeft='80vh';
+        opCar1.style.marginLeft='105vh';
+}
 }
 
  // Function to move a car element
@@ -158,5 +179,48 @@ const animate1 = () => {
     opCar1.classList.remove('animateop02')
     opCar2.classList.remove('animateop03')
     street.classList.remove('animatestr1')
+
+    //* More than 1000
+    opCar.classList.remove('animateop001')
+    opCar1.classList.remove('animateop002')
+    opCar2.classList.remove('animateop003')
+    street.classList.remove('animatestr2')
     
+}
+
+ // Function for collision
+ const findCollision = () => {
+    let playerRect = playerCar.getBoundingClientRect();
+    let opCarRect = opCar.getBoundingClientRect();
+    let opCarRect1 = opCar1.getBoundingClientRect();
+    let opCarRect2 = opCar2.getBoundingClientRect();
+    
+ //* Detect collisions
+    let topBoundary = playerRect.top + playerCar.offsetHeight * 0.1
+    let bottomBoundary = playerRect.bottom - playerCar.offsetHeight * 0.1;
+
+ if (topBoundary < opCarRect.bottom && bottomBoundary > opCarRect.top &&
+    playerRect.left < opCarRect.right && playerRect.right > opCarRect.left) {
+    gameOff()
+ }  else if (topBoundary < opCarRect1.bottom && bottomBoundary > opCarRect1.top &&
+    playerRect.left < opCarRect1.right && playerRect.right > opCarRect1.left){
+    gameOff()
+    }else if (topBoundary < opCarRect2.bottom && bottomBoundary > opCarRect2.top &&
+    playerRect.left < opCarRect2.right && playerRect.right > opCarRect2.left){
+    gameOff()
+        }
+ }
+ 
+ // Function for game over
+ const gameOff = () => {
+    gameOn = false;
+    alert("Game Over! Your score: " + playCar.score);
+ }
+
+ const gameLogic = () => {
+    if (gameOn == true) {
+        findCollision();
+        gameLevel();
+        requestAnimationFrame(gameLogic);
+    }
 }
