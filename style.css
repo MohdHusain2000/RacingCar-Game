@@ -1,3 +1,6 @@
+body {
+  background: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-cool-racing-texture-runway-passion-background-image_211571.jpg");
+}
 .gameRacing {
   display: flex;
   justify-content: space-between;
@@ -13,7 +16,6 @@ width: 190vh;
 margin-top: 0;
 position: absolute;
 border: solid black 15px;
-
 }
 
 .racing-game > img {
@@ -39,17 +41,18 @@ background-size: cover;
 } 
 
 .playercar > img {
-height: 20vh;
+height: 13vh;
 position: absolute;
+padding: 0 auto;
 margin-bottom: 10px;
 margin-left: 100vh;
 margin-top: 60vh;
 }
 
 .object > img {
-margin-left: 93vh;
 height: 15vh;
 position: absolute;
+margin-left: 72vh;
 }
 
 .object1 > img {
@@ -59,10 +62,16 @@ position: absolute;
 }
 
 .object2 > img {
-margin-left: 75vh;
 height: 15vh;
 position: absolute;
+left: 48%;
 }
+
+.object3 > img {
+  height: 15vh;
+  position: absolute;
+  margin-left: 81.5vh;
+  }
 
 @keyframes object {
 0% {
@@ -103,6 +112,20 @@ position: absolute;
 
 }
 
+@keyframes object3 {
+  0% {
+     
+      top: 10vh;
+
+  }
+  100% {
+
+      top: 80vh; 
+
+  }
+
+}
+
 @keyframes streetMotion {
 
 from {
@@ -130,39 +153,69 @@ to {
 }
 
  .animateop {        
-  animation: object 4s  linear infinite;
+  animation: object 5s  linear infinite;
 }
  .animateop1 {        
   animation: object1 3s  linear infinite;
 }
  .animateop2 {        
-  animation: object2 2s  linear infinite;
+  animation: object2 4s  linear infinite;
 }
  .animatestr {        
-  animation: streetMotion 8s  linear infinite;
+  animation: streetMotion 10s  linear infinite;
 }
 
 .animateop01 {        
-  animation: object 4s  linear infinite;
+  animation: object 2s  linear infinite;
 }
  .animateop02 {        
-  animation: object1 1s  linear infinite;
+  animation: object1 2s  linear infinite;
 }
  .animateop03 {        
-  animation: object2 3s  linear infinite;
+  animation: object2 2s  linear infinite;
 }
  .animatestr1 {        
-  animation: streetMotion 6.5s  linear infinite;
+  animation: streetMotion 10s  linear infinite;
 }
-             
+
+.animateop001 {        
+  animation: object 3s  linear infinite;
+}
+ .animateop002 {        
+  animation: object1 3s  linear infinite;
+}
+ .animateop003 {        
+  animation: object2 3s  linear infinite;
+}
+ .animatestr2 {        
+  animation: streetMotion 10s  linear infinite;
+}
+
+.animateop0001 {        
+  animation: object 3s  linear infinite;
+}
+ .animateop0002 {        
+  animation: object1 2s  linear infinite;
+}
+ .animateop0003 {        
+  animation: object2 3s  linear infinite;
+}
+ .animateop0004 {        
+  animation: object3 2s  linear infinite;
+}
+ .animatestr3 {        
+  animation: streetMotion 10s  linear infinite;
+}             
+
 #start {
  position: absolute;
  cursor: pointer;
+ display: flex;
  font-size: 16px;
  border-radius: 3px;
  background-color: green;
- margin-left: 12px;
- border: solid black;
+ margin-left: 0;
+ border: solid green 5px;
 }
 
 #stop {
@@ -171,7 +224,7 @@ cursor: pointer;
 font-size: 16px;
 border-radius: 3px;
 background-color: red;
-border: solid black;
+border: solid red 5px;
 margin-left: 100px;
 }
 
@@ -179,6 +232,27 @@ margin-left: 100px;
 position: absolute;
 font-size: 16px;
 background-color: blue;
-border: solid black 3px;
-margin-left: 1200px;
+border: solid blue 5px;
+margin-left: 1175px;
+text-align: center;
 }
+
+.popup {
+  display: flex;
+  position: absolute;
+  margin-top: 74.8vh;
+  margin-left: 132.35vh;
+  background-color: green;
+  padding: 12px;
+  width: 57vh;
+  height: 8.8vh;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  border-radius: solid 5px black;
+  width: 80vh;
+  text-align: center;
+}
+

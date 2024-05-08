@@ -1,0 +1,86 @@
+body {
+    background: url("https://wallpapers.com/images/hd/racing-games-1920-x-1080-wallpaper-jhgrjvmkado4bocx.jpg");
+    height: 97.5vh;
+    width: 160vh;
+    background-size: 100% 100%;
+  }
+
+h1 {
+    font-size: 30px;
+    color: white;
+    margin-left: 8vh;
+    text-align: center;
+    padding-left: 45px;
+    padding-bottom: 0;
+    margin-top: -25vh;
+
+}
+
+.container {
+  display: flex; 
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.507);
+  height: 68vh;
+  width: 80vh;
+  margin-top: 25vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.instruct{
+  position: absolute;
+  height: 50vh;
+  width: 80vh;
+  margin-top: 10vh;
+}
+
+.arrowLeft > img {
+  height: 10vh;
+  width: 10vh;
+  margin-top: -20vh;
+  margin-left: -48vh;
+}
+
+.arrowUp > img {
+  height: 10vh;
+  width: 10vh;
+  margin-top: 20vh;
+  margin-left: -24.5vh;
+ 
+}
+
+.arrowDown > img {
+  height: 10vh;
+  width: 10vh;
+  margin-top: 20vh;
+  margin-left: -51.8vh;
+
+}
+
+.arrowRight > img {
+  height: 10vh;
+  width: 10vh;
+  margin-top: -12vh;
+  margin-left: -28.5vh;
+ 
+}
+
+
+#start{
+position: absolute;
+cursor: pointer;
+display: flex;
+text-align: center;
+font-size: 16px;
+border-radius: 30px;
+background-color: rgba(32, 224, 215, 0.801);
+margin-left: -40vh;
+border: solid #008000 5px;
+margin-top: 20vh;
+height: 13vh;
+width: 35vh;
+padding: 15px;
+padding-left: 68px;
+font-size: 35px;
+
+}
