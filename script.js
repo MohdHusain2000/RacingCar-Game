@@ -34,12 +34,14 @@ let playCar= {
 // Functions For Game Logic Here
 // Function to start the game
  const startPlay= () => {
+    resetGame()
     gameOn = true
     playCar.score
     scoreResult()
     movePlayerCar()
     highScore()
     gameLogic()
+    
 }
 
 // Function to stop the game
@@ -276,12 +278,59 @@ const animate4 = () => {
            animate1()
         } else if (playCar.score >=600 && playCar.score <1000){
            animate2()
-        } else if (playCar.score >=1000 && playCar.score <1500){
+        } else if (playCar.score >=1100 && playCar.score <1300){
            animate3()
-        } else if (playCar.score >=1500){
+        } else if (playCar.score >=1500 && playCar.score <=1700){
            animate4()
-     } 
- }}
+     } else{
+     moveOpCarsRandomly()
+     }}}
+
+// function to move the cars randomly
+const moveOpCarsRandomly = () => {
+        moveOpCar(opCar);
+        moveOpCar(opCar1);
+        moveOpCar(opCar2);
+        moveOpCar(opCar3);
+    }  
+
+// Function to move a specific opponent car randomly
+const moveOpCar = (carElement) => {
+let randomDir = Math.random();
+let carTop = parseFloat(window.getComputedStyle(carElement).top);
+let carLeft = parseFloat(window.getComputedStyle(carElement).left);
+
+if (randomDir < 0.25) {
+    carElement.style.top = (carTop + opcarSpeed) + 'px'; // Move down
+} else if (randomDir < 0.5) {
+    carElement.style.top = (carTop - opcarSpeed) + 'px'; // Move up
+} else if (randomDir < 0.75) {
+    carElement.style.left = (carLeft + opcarSpeed) + 'px'; // Move right
+} else {
+    carElement.style.left = (carLeft - opcarSpeed) + 'px'; // Move left
+}
+}
+
+// Function to reset the game
+const resetGame = () => {
+    gameOn =false;
+    playCar.score = 0;
+    stopAnimate()
+
+// * reset the positions of all the cars
+    playerCar.style.top = '0px';
+    playerCar.style.left = '0px';
+    opCar.style.top = '0px';
+    opCar.style.left = '0px';
+    opCar1.style.top = '0px';
+    opCar1.style.left = '0px';
+    opCar2.style.top = '0px';
+    opCar2.style.left = '0px';
+    opCar3.style.top = '0px';
+    opCar3.style.left = '0px';
+
+    message.innerText = 'none';
+}
 
 ////////////////////////////////
 // Rendering Function
