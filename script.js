@@ -253,7 +253,6 @@ const animate4 = () => {
         findCollision();
         gameLevel();
         requestAnimationFrame(gameLogic);
-        gameOutcome();
     }
     else {
 
@@ -296,25 +295,9 @@ const animate4 = () => {
            animate3()
         } else if (playCar.score >=1500 && playCar.score <=1700){
            animate4()
-     } else{
-        moveOpCarsRandomly()
+     } 
     }
-     }}
-
-// function to move the cars randomly
-const animationDurations = [3, 4, 5]   
-const moveOpCarsRandomly = () => {
-        randomAnimationDuration(opCar);
-        randomAnimationDuration(opCar1);
-        randomAnimationDuration(opCar2);
-        randomAnimationDuration(opCar3);
-}
-
-// Function to set random animation duration for a car
-    const randomAnimationDuration = (car) => {
-        const randomDuration = animationDurations[Math.floor(Math.random() * animationDurations.length)];
-        car.style.animationDuration = `${randomDuration}s`;
-};
+    }
 
 // Function to reset the game
 const resetGame = () => {
