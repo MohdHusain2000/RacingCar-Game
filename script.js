@@ -39,7 +39,7 @@ let playCar= {
     playCar.score
     scoreResult()
     movePlayerCar()
-    highScore()
+    Result()
     gameLogic()
     
 }
@@ -47,7 +47,7 @@ let playCar= {
 // Function to stop the game
  const stopPlay = () => {
     gameOn = false;
-    stopAnimate()
+    resetGame()
 }
 
 // Function to count the Car.score
@@ -121,10 +121,10 @@ const moveRight = () => {
 }
 
  // Function to get the highest score
- const highScore = () => {
+ const Result = () => {
     let interval = setInterval(() => {
         if (gameOn) {
-            playCar.score += 3
+            playCar.score += 1
             scoreResult();
         } else {
             clearInterval(interval);
@@ -211,7 +211,6 @@ const animate4 = () => {
     opCar2.classList.remove('animateop0003')
     opCar3.classList.remove('animateop0004')
     street.classList.remove('animatestr2')
-    
 }
 
  // Function for collision
@@ -246,6 +245,7 @@ const animate4 = () => {
     stopPlay()
     let message = document.querySelector('.content')
     message.innerText = 'Game over! your score is: ' + playCar.score
+    resetGame();
 
  }
  const gameLogic = () => {
@@ -253,83 +253,78 @@ const animate4 = () => {
         findCollision();
         gameLevel();
         requestAnimationFrame(gameLogic);
+        gameOutcome();
     }
     else {
-        
+
     }
 }
 
- // Function to get the winner
+ // Functions to get the highest
+ const promptHighScore = () => {
+    const highScoreContent = document.getElementById('highScoreContent');
+    const highScore = localStorage.getItem('highScore') || 0;
+    highScoreContent.innerText = `Winner! High Score: ${highScore}`;
+    document.getElementById('scorePopup').style.display = 'flex';
+}
+    
+ const hideHighScore = () => {
+    document.getElementById('scorePopup').style.display = 'none';
+}
+
  const gameOutcome = () =>{
     gameOn= false;
-    const highScore = localStorage.getItem("highScore");
-    if (player.score > highScore) {
-      localStorage.setItem("highScore", play.score);
-      score.innerText = `New High Score! Score: ${player.score}`;
-    } else {
-      score.innerText = `Game Over Score was ${player.score}`;
+    const highScore = localStorage.getItem("highScore")
+    const playerScore = playCar.score
+   
+    if (playerScore > highScore || !highScore) {
+        localStorage.setItem("highScore", playerScore);
+        promptHighScore()
+        } else {
+        hideHighScore()
     }
   }
 
 // function to increase game hardness
  const gameLevel = () => {
      if (gameOn == true) {
-        if (playCar.score <500){
+        if (playCar.score>=300 && playCar.score <=500){
            animate1()
-        } else if (playCar.score >=600 && playCar.score <1000){
+        } else if (playCar.score >=800 && playCar.score <=1000){
            animate2()
-        } else if (playCar.score >=1100 && playCar.score <1300){
+        } else if (playCar.score >=1100 && playCar.score <=1300){
            animate3()
         } else if (playCar.score >=1500 && playCar.score <=1700){
            animate4()
      } else{
-     moveOpCarsRandomly()
-     }}}
+        moveOpCarsRandomly()
+    }
+     }}
 
 // function to move the cars randomly
+const animationDurations = [3, 4, 5]   
 const moveOpCarsRandomly = () => {
-        moveOpCar(opCar);
-        moveOpCar(opCar1);
-        moveOpCar(opCar2);
-        moveOpCar(opCar3);
-    }  
-
-// Function to move a specific opponent car randomly
-const moveOpCar = (carElement) => {
-let randomDir = Math.random();
-let carTop = parseFloat(window.getComputedStyle(carElement).top);
-let carLeft = parseFloat(window.getComputedStyle(carElement).left);
-
-if (randomDir < 0.25) {
-    carElement.style.top = (carTop + opcarSpeed) + 'px'; // Move down
-} else if (randomDir < 0.5) {
-    carElement.style.top = (carTop - opcarSpeed) + 'px'; // Move up
-} else if (randomDir < 0.75) {
-    carElement.style.left = (carLeft + opcarSpeed) + 'px'; // Move right
-} else {
-    carElement.style.left = (carLeft - opcarSpeed) + 'px'; // Move left
+        randomAnimationDuration(opCar);
+        randomAnimationDuration(opCar1);
+        randomAnimationDuration(opCar2);
+        randomAnimationDuration(opCar3);
 }
-}
+
+// Function to set random animation duration for a car
+    const randomAnimationDuration = (car) => {
+        const randomDuration = animationDurations[Math.floor(Math.random() * animationDurations.length)];
+        car.style.animationDuration = `${randomDuration}s`;
+};
 
 // Function to reset the game
 const resetGame = () => {
     gameOn =false;
-    playCar.score = 0;
+    score = 0;
     stopAnimate()
 
 // * reset the positions of all the cars
     playerCar.style.top = '0px';
     playerCar.style.left = '0px';
-    opCar.style.top = '0px';
-    opCar.style.left = '0px';
-    opCar1.style.top = '0px';
-    opCar1.style.left = '0px';
-    opCar2.style.top = '0px';
-    opCar2.style.left = '0px';
-    opCar3.style.top = '0px';
-    opCar3.style.left = '0px';
-
-    message.innerText = 'none';
 }
 
 ////////////////////////////////

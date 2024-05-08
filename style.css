@@ -237,6 +237,18 @@ margin-left: 1175px;
 text-align: center;
 }
 
+#Back {
+  position: absolute;
+  font-size: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  border: solid yellow 5px;
+  border-radius: 3px;
+  background-color: yellow;
+  margin-left: 200px;
+  text-align: center;
+  }
+
 .popup {
   display: flex;
   position: absolute;
