@@ -127,8 +127,6 @@ const moveRight = () => {
             scoreResult();
         } else if (gameOn == false){
             playCar.score=0
-            scoreResult();
-            gameOff()
         }
         else {
             clearInterval(interval);
@@ -307,7 +305,7 @@ const resetGame = () => {
     gameOn =false;
     let message = document.querySelector('.content')
     message.innerText = ''
-    playCar.score = 0;
+    Result()
     scoreResult();
     stopAnimate();
     playerCar.style.top = '0px';
