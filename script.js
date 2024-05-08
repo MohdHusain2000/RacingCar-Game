@@ -59,7 +59,7 @@ let playCar= {
     controlKeys[event.keys = true]
         if (gameOn) {
             if (event.key === 'ArrowUp'){
-                Acceleration()
+                accelerations()
                 moveUp () 
             } else if (event.key === 'ArrowDown'){
                 moveDown ()
@@ -85,7 +85,7 @@ const moveUp = () => {
         playerCar.style.top = 0 +'px'
     }
 }
-const Acceleration = () =>  {
+const accelerations = () =>  {
     playCar.speed += playCar.acceleration
     let Dir = parseFloat(playerCar.style.top)
     if (Dir > 0 || Dir !== null)
@@ -135,6 +135,7 @@ const animate1 = () => {
     opCar.classList.add('animateop')
     opCar1.classList.add('animateop1')
     opCar2.classList.add('animateop2')
+    opCar3.style.display= 'none'
     street.classList.add('animatestr') 
 }
 
@@ -143,11 +144,13 @@ const animate2 = () => {
     opCar.classList.add('animateop01')
     opCar1.classList.add('animateop02')
     opCar2.classList.add('animateop03')
+    opCar3.style.display= 'none'
     street.classList.add('animatestr1')
 
     if (playCar.score >= 800 && playCar.score <1000){
         opCar.style.marginLeft='100vh';
         opCar1.style.marginLeft='80vh';
+        opCar3.style.display= 'none'
     }
 }
 
@@ -155,16 +158,18 @@ const animate3 = () => {
         opCar.classList.add('animateop001')
         opCar1.classList.add('animateop002')
         opCar2.classList.add('animateop003')
+        opCar3.classList.add('animateop0004')
         street.classList.add('animatestr2')
         
-        if (playCar.score >= 1000){
+        if (playCar.score >= 1000 && playCar.score<1250){
             opCar.style.marginLeft='83vh';
             opCar1.style.marginLeft='110vh';
+            opCar3.style.display= 'none'
         }
 
-        if (playCar.score >= 1250){
-        opCar.style.marginLeft='80vh';
-        opCar1.style.marginLeft='105vh';
+        if (playCar.score >= 1250 && playCar.score<1500){
+            opCar.style.marginLeft='80vh';
+            opCar1.style.marginLeft='105vh';
 }
 }
 
@@ -174,12 +179,12 @@ const animate4 = () => {
     opCar2.classList.add('animateop0003')
     opCar3.classList.add('animateop0004')
     street.classList.add('animatestr2')
-    
+    opCar3.style.display= 'block'
+
 }
 
  // Function to move a car element
  const stopAnimate = () => {
-    console.log("Stopping play...")
     //* Less than 500
     opCar.classList.remove('animateop')
     opCar1.classList.remove('animateop1')
@@ -221,30 +226,25 @@ const animate4 = () => {
 
  if (topBoundary < opCarRect.bottom && bottomBoundary > opCarRect.top &&
     playerRect.left < opCarRect.right && playerRect.right > opCarRect.left) {
-        console.log('Collosion');
     gameOff()
  }  else if (topBoundary < opCarRect1.bottom && bottomBoundary > opCarRect1.top &&
     playerRect.left < opCarRect1.right && playerRect.right > opCarRect1.left){
-        console.log('Collosion');
     gameOff()
     }else if (topBoundary < opCarRect2.bottom && bottomBoundary > opCarRect2.top &&
     playerRect.left < opCarRect2.right && playerRect.right > opCarRect2.left){
-        console.log('Collosion');
     gameOff()
     }else if (topBoundary < opCarRect3.bottom && bottomBoundary > opCarRect3.top &&
     playerRect.left < opCarRect3.right && playerRect.right > opCarRect3.left){
-        console.log('Collosion');
     gameOff()
     }
  }
  
  // Function for game over
  const gameOff = () => {
-     stopPlay()
+    stopPlay()
     let message = document.querySelector('.content')
     message.innerText = 'Game over! your score is: ' + playCar.score
-    
-    
+
  }
  const gameLogic = () => {
     if (gameOn == true) {
@@ -253,7 +253,7 @@ const animate4 = () => {
         requestAnimationFrame(gameLogic);
     }
     else {
-        // cancelAnimationFrame(gameLogic)
+        
     }
 }
 
@@ -274,7 +274,7 @@ const animate4 = () => {
      if (gameOn == true) {
         if (playCar.score <500){
            animate1()
-        } else if (playCar.score >=500 && playCar.score <1000){
+        } else if (playCar.score >=600 && playCar.score <1000){
            animate2()
         } else if (playCar.score >=1000 && playCar.score <1500){
            animate3()
