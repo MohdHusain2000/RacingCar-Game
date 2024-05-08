@@ -302,8 +302,9 @@ const animate4 = () => {
 // Function to reset the game
 const resetGame = () => {
     gameOn =false;
-    score = 0;
-    stopAnimate()
+    playCar.score = 0;
+    scoreResult();
+    stopAnimate();
 
 // * reset the positions of all the cars
     playerCar.style.top = '0px';
