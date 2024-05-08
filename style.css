@@ -13,7 +13,6 @@ width: 190vh;
 margin-top: 0;
 position: absolute;
 border: solid black 15px;
-
 }
 
 .racing-game > img {
@@ -172,11 +171,12 @@ to {
 #start {
  position: absolute;
  cursor: pointer;
+ display: flex;
  font-size: 16px;
  border-radius: 3px;
  background-color: green;
- margin-left: 12px;
- border: solid black;
+ margin-left: 0;
+ border: solid green 5px;
 }
 
 #stop {
@@ -185,7 +185,7 @@ cursor: pointer;
 font-size: 16px;
 border-radius: 3px;
 background-color: red;
-border: solid black;
+border: solid red 5px;
 margin-left: 100px;
 }
 
@@ -193,6 +193,27 @@ margin-left: 100px;
 position: absolute;
 font-size: 16px;
 background-color: blue;
-border: solid black 3px;
-margin-left: 1200px;
+border: solid blue 5px;
+margin-left: 1175px;
+text-align: center;
 }
+
+.popup {
+  display: flex;
+  position: absolute;
+  margin-top: 74.8vh;
+  margin-left: 132.2vh;
+  background-color: green;
+  padding: 12px;
+  width: 57.3vh;
+  height: 8.8vh;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  border-radius: solid 5px black;
+  width: 80vh;
+  text-align: center;
+}
+
