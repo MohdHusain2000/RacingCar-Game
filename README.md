@@ -2,7 +2,7 @@
 My project for Unit1 at GA
 # **Racing Car Project**
 
-## **Submission Deadline : 05/04/2024**
+## **Submission Deadline : 05/09/2024**
 
 ### **Done by: Mohamed Husain**
 
