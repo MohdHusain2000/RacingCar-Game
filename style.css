@@ -166,13 +166,13 @@ to {
 }
 
 .animateop01 {        
-  animation: object 2s  linear infinite;
+  animation: object 3s  linear infinite;
 }
  .animateop02 {        
   animation: object1 2s  linear infinite;
 }
  .animateop03 {        
-  animation: object2 2s  linear infinite;
+  animation: object2 3s  linear infinite;
 }
  .animatestr1 {        
   animation: streetMotion 10s  linear infinite;
