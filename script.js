@@ -121,7 +121,7 @@ const moveRight = () => {
  const highScore = () => {
     let interval = setInterval(() => {
         if (gameOn) {
-            playCar.score += 5
+            playCar.score += 3
             scoreResult();
         } else {
             clearInterval(interval);
@@ -136,6 +136,7 @@ const animate = () => {
     opCar2.classList.add('animateop2')
     street.classList.add('animatestr') 
 }
+
 // Function to animate opponents cars
 const animate1 = () => {
     opCar.classList.add('animateop01')
@@ -143,7 +144,7 @@ const animate1 = () => {
     opCar2.classList.add('animateop03')
     street.classList.add('animatestr1')
 
-    if (playCar.score >= 750 && playCar.score <1000){
+    if (playCar.score >= 800 && playCar.score <1000){
         opCar.style.marginLeft='100vh';
         opCar1.style.marginLeft='80vh';
     }
@@ -156,8 +157,8 @@ const animate2 = () => {
         street.classList.add('animatestr2')
         
         if (playCar.score >= 1000){
-            opCar.style.marginLeft='85vh';
-            opCar1.style.marginLeft='112vh';
+            opCar.style.marginLeft='83vh';
+            opCar1.style.marginLeft='110vh';
         }
 
         if (playCar.score >= 1250){
@@ -224,3 +225,22 @@ const animate2 = () => {
         requestAnimationFrame(gameLogic);
     }
 }
+
+// function to increase game hardness
+ const gameLevel = () => {
+     if (gameOn = true) {
+        if (playCar.score <500){
+           animate()
+        } else if (playCar.score >=500 && playCar.score <1000){
+           animate1()
+        } else if (playCar.score >=1000){
+           animate2()
+        }
+     } 
+ }
+
+////////////////////////////////
+// Rendering Function
+start.addEventListener('click', startPlay)
+stop.addEventListener('click', stopPlay)
+
