@@ -245,7 +245,6 @@ const animate4 = () => {
     stopPlay()
     let message = document.querySelector('.content')
     message.innerText = 'Game over! your score is: ' + playCar.score
-    resetGame();
 
  }
  const gameLogic = () => {
@@ -302,7 +301,8 @@ const animate4 = () => {
 // Function to reset the game
 const resetGame = () => {
     gameOn =false;
-    playCar.score = 0;
+    let message = document.querySelector('.content')
+    message.innerText = ''
     scoreResult();
     stopAnimate();
 
