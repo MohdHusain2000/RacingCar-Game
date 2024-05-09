@@ -8,7 +8,7 @@ My project for Unit1 at GA
 
 ### Contact Details
 
-| [Home](http://www.duckduckgo.com)
+| [Home](Racing-Cars.surge.sh)
 | [GitHub](https://github.com/)
 | [Linkdeln](https://www.linkedin.com/)
 | [facebook](https://https://www.facebook.com/)
@@ -17,7 +17,7 @@ My project for Unit1 at GA
 
 ### Simple Car Racing Game with Source Code is a project that is a single-player game where goal is to race your way and gain more score. The game has a simple design that contains an image sprites and background color. The purpose of the game is to provide fun time with your friends, family, classmate, etc. The Simple Car Racing Game was created in a HTML web browser that use JavaScript engine that enhance the capability of the modern web development. The game is playable through web browser that visualize the car and road.
 
-## Initial Design Features
+## Initial Design Features and expectations 
 
   - ### Movement
     ### The core fundamental foundation of any racing game UI design is based upon the plotted movement system used in the game.The great racing games comprise this system to give players full ownership of the movement. And on the contrary, the games rated low are because of the inefficient movement plotting system they’ve used.
@@ -33,16 +33,30 @@ My project for Unit1 at GA
    - ### The player can play the game via keyboard bindings(Left Arrow Key to Move Left, Right Arrow Key to Move Right, Up Arrow Key to Move Upward, Down Arrow Key to Move Downward). 
    - ### The game is so simple you just avoid your card getting collide. The longer you stay in the road your score will  continue to increase.
 
-   ### Generally, the game focuses on designing a AI player which drive a racing car while implementic logic that allow the race to start on specific created environment and then the scoring system will calculate the number of loops to check if the player win or lost the game. During the loops there are other cars and objects that will add difficulties to the games. Each of these components will designed based on specific analysis. For examplem, the car speed and motion will be considred according to motion laws such as newton.  
+   ### Generally, the game focuses on designing a AI player which drive a racing car while implementic logic that allow the race to start on specific created environment and then the scoring system will calculate the number of loops to check if the player win or lost the game. During the loops there are other cars and objects that will add difficulties to the games.  
 
 ## Initial Design
 
-#### The design below represent the final product which was tested and expected to satisfy the conditions
+#### The design below represent the initial desgin based on conditions and expectations.
 
 ![Image](https://www.sourcecodester.com/sites/default/files/images/razormist/simple-car-racing-game-using-javascript.png)
+
+## Final Design 
+
+#### The design below represent the final desgin which was possible to develop during the limited time provided.
+
+![Image](https://www.sourcecodester.com/sites/default/files/images/razormist/simple-car-racing-game-using-javascript.png)
+
+## Future Improvements 
+
+#### - Create random function to make the opponents cars move randomly.
+#### = Add different environments and themes to enhance the game visuals and graphics.
+#### = Use variety of cars to have enjoy the game.
 
 ## Credits
 
 #### Design features: [The requirement](https://www.cubix.co/blog/racing-game-mechanics-guide/)
 
-#### Car project : [Researshes](https://www.bestproductsreviews.com/robot-kits?targetid=dat-2337080684876673:loc-204&matchtype=b&device=c&campaignid=530609902&creative=&adgroupid=1364496419137375&feeditemid=&loc_physical_ms=154610&loc_interest_ms=&network=o&devicemodel=&placement=&keyword=$Computers%20%26%20Accessories&target=&adposition=&trackid=us_all_top_2_bing&mId=H149003CQN&msclkid=f761648e7bbf13e8685f02a9e01fb621)
+#### Code research: [functions](https://stackoverflow.com/questions/2440377/javascript-collision-detection)
+
+#### Car project : [Researshes](https://www.w3schools.com/cssref/css3_pr_animation-keyframes.php)
