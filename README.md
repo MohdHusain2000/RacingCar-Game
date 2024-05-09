@@ -20,13 +20,13 @@ My project for Unit1 at GA
 ## Initial Design Features and expectations 
 
   - ### Movement
-    ### The core fundamental foundation of any racing game UI design is based upon the plotted movement system used in the game.The great racing games comprise this system to give players full ownership of the movement. And on the contrary, the games rated low are because of the inefficient movement plotting system they’ve used.
+    ### The core fundamental foundation of any racing game UI design is based upon the plotted movement system used in the game.The great racing games comprise this system to give players full ownership of the movement. The movement was completed as it can be ilustrated through playing the game.
 
   - ### Obstacles 
-    ### Almost every racing game entails hurdles and obstacles, contributing to the game’s complexity and overall thrill. Obstacles are crucial as they keep the players interested in the game. Furthermore, overcoming such hurdles gives the players a sense of achievement which is instrumental in maintaining enticement. The adventurous random obstacles include barriers, broken roads, bridges, off-roading, street light poles, traffic signals, houses, police cars, and hectic traffic.
+    ### Almost every racing game entails hurdles and obstacles, contributing to the game’s complexity and overall thrill. Obstacles are crucial as they keep the players interested in the game. Furthermore, overcoming such hurdles gives the players a sense of achievement which is instrumental in maintaining enticement. The adventurous random obstacles include barriers, broken roads, bridges, off-roading, street light poles, traffic signals, houses, police cars, and hectic traffic. However during the project only normal cars were used due to the difficulty of developing the game.
    
   - ### Environment
-    ### The most pleasing environment may create a legitimate and intimate attachment to a game. For example, a roaring audience, flags waving in the grandstand, confetti being thrown into the racetrack, and fireworks going off all contribute tremendously to the sense that the race is genuinely essential. Winning a race should be fun; it’s the crux of racing.
+    ### The most pleasing environment may create a legitimate and intimate attachment to a game. For example, a roaring audience, flags waving in the grandstand, confetti being thrown into the racetrack, and fireworks going off all contribute tremendously to the sense that the race is genuinely essential. Winning a race should be fun; it’s the crux of racing. Unfortunetly, The time was not suffiecient to implement such features. 
 
 ## Algorithms
    - ### In the intro screen, there will be three buttons named START, QUIT, and INSTRUCTION.
@@ -45,8 +45,7 @@ My project for Unit1 at GA
 
 #### The design below represent the final desgin which was possible to develop during the limited time provided.
 
-![Image](https://www.sourcecodester.com/sites/default/files/images/razormist/simple-car-racing-game-using-javascript.png)
-
+![Image](https://ibb.co/93b6d0x)
 ## Future Improvements 
 
 #### - Create random function to make the opponents cars move randomly.
