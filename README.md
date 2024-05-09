@@ -35,7 +35,7 @@ My project for Unit1 at GA
 
    ### Generally, the game focuses on designing a AI player which drive a racing car while implementic logic that allow the race to start on specific created environment and then the scoring system will calculate the number of loops to check if the player win or lost the game. During the loops there are other cars and objects that will add difficulties to the games. Each of these components will designed based on specific analysis. For examplem, the car speed and motion will be considred according to motion laws such as newton.  
 
-## Final Design
+## Initial Design
 
 #### The design below represent the final product which was tested and expected to satisfy the conditions
 
