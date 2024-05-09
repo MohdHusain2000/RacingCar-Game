@@ -45,12 +45,12 @@ My project for Unit1 at GA
 
 #### The design below represent the final desgin which was possible to develop during the limited time provided.
 
-![Image](https://ibb.co/93b6d0x)
+![Image](https://i.postimg.cc/hGPhfSB0/Screenshot-2024-05-08-210103.jpg)
 ## Future Improvements 
 
 #### - Create random function to make the opponents cars move randomly.
-#### = Add different environments and themes to enhance the game visuals and graphics.
-#### = Use variety of cars to have enjoy the game.
+#### - Add different environments and themes to enhance the game visuals and graphics.
+#### - Use variety of cars to have enjoy the game.
 
 ## Credits
 
